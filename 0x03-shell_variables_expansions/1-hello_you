@@ -1,2 +1,8 @@
 #!/bin/bash
-echo "hello $USER"
+
+if [ -z "$USER" ]; then
+  echo "hello MyUser"
+else
+  echo "hello $USER"
+fi
+
