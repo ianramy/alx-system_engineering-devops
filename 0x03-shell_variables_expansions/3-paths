@@ -1,3 +1,2 @@
 #!/bin/bash
-IFS=':' read -ra paths <<< "$PATH"
-echo "${#paths[@]}"
+echo $PATH | tr ":" "\n" | wc -l
