@@ -5,4 +5,3 @@ if [ -z "$USER" ]; then
 else
   echo "hello $USER"
 fi
-
