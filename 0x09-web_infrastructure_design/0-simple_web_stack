@@ -1,0 +1,4 @@
+User --> DNS (www.foobar.com) --> Server (8.8.8.8)
+                                └──> Nginx (Web Server)
+                                    └──> App Server
+                                        └──> MySQL Database
