@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Update package lists and install nginx
+apt-get update
+apt-get install -y nginx
+
+# Create a custom 404 page
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+
+# Configure nginx to use the custom 404 page
+sed -i "/server_name _;/a \\terror_page 404 /custom_404.html;" /etc/nginx/sites-available/default
+
+# Restart nginx without systemctl
+service nginx restart

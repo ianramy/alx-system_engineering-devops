@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Update package lists and install nginx
+apt-get update
+apt-get install -y nginx
+
+# Create the Hello World page
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+
+# Start nginx (without systemctl)
+service nginx start

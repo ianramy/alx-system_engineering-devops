@@ -1,4 +1,3 @@
 #!/bin/bash
-# Connect to server using private key ~/.ssh/school and user ubuntu
 
 ssh -i ~/.ssh/school ubuntu@"$1"

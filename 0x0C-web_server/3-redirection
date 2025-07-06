@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Update package lists and install nginx
+apt-get update
+apt-get install -y nginx
+
+# Add redirection configuration
+REDIRECT="rewrite ^/redirect_me\$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+
+# Insert redirection into the default server block
+sed -i "/server_name _;/a \\t$REDIRECT" /etc/nginx/sites-available/default
+
+# Restart nginx without systemctl
+service nginx restart
