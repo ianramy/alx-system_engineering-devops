@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
+# Installs and configures Nginx on an Ubuntu server to serve "Hello World!" on port 80
 
-# Update package lists and install nginx
-apt-get update
-apt-get install -y nginx
+# Exit on any error
+set -e
 
-# Create the Hello World page
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
+# Update the package list
+apt-get update -y
+# Install Nginx
+apt-get install nginx -y
 
-# Start nginx (without systemctl)
+# Create a page with "Hello World!" message
+echo "Hello World!" > /var/www/html/index.html
+
+# Start nginx using service command (not systemctl)
 service nginx start
+-+
